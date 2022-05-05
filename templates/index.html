@@ -15,9 +15,11 @@
                         {% if "placeholder" in post.featured_image.url %} 
                         <img class="card-img-top"
                             src="https://www.torani.com/sites/default/files/recipes/illustration/GettyImages-1130315137%20%281%29-min.jpg">
+                        
                         {% else %} 
                         <img class="card-img-top" src=" {{ post.featured_image.url }}">
                         {% endif %} 
+                        
                         <div class="image-flash">
                             <p class="author">Author: {{ post.author }}</p>
                         </div>

@@ -14,6 +14,7 @@
                 <!-- The featured image URL goes in the src attribute -->
                 {% if "placeholder" in post.featured_image.url %}
                 <img src="https://www.torani.com/sites/default/files/recipes/illustration/GettyImages-1130315137%20%281%29-min.jpg" width="100%">
+               
                 {% else %}
                 <img src="{{ post.featured_image.url }}" width="100%">
                 {% endif %}
