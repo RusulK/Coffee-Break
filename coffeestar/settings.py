@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cloudinary',
     'django_summernote',
+    'crispy_forms',
     'coffeeblog',
 ]
 
@@ -63,6 +64,8 @@ MIDDLEWARE = [
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+
+CRISPY_TEMPLATE_URL = 'bootstrap4'
 
 ROOT_URLCONF = 'coffeestar.urls'
 
