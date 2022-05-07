@@ -69,6 +69,7 @@ CRISPY_TEMPLATE_URL = 'bootstrap4'
 
 ROOT_URLCONF = 'coffeestar.urls'
 
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
