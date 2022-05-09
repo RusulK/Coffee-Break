@@ -140,3 +140,39 @@ body {
     background: transparent;
     border: none;
 }
+
+.callout-container {
+   
+        height: 100vh;
+    
+        background: url('https://res.cloudinary.com/dsfy0wzcj/image/upload/v1652094974/rsz_adobestock_105907729_j3nt6e.webp') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+        position: relative;
+    }
+
+    
+    
+    .jumbotron h1 {
+        color: white;
+        font-weight: bold;
+        margin-bottom: 30px;
+        color: #fffffe;
+        font-style: italic;
+        text-align: left;
+    }
+    .opaque-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background:rgb(164 162 160 / 30%);
+    }
