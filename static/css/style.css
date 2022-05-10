@@ -65,7 +65,7 @@ img {
 }
 
 .masthead-text {
-    background-color: #445261;
+    background-color: #5e4b15;
     color: white;
     position: relative;
 }
@@ -82,7 +82,7 @@ img {
     right: 90%;
     height: 100%;
     width: 150%;
-    background: #445261;
+    background: #5e4b15;
     -webkit-transform: skew(15deg);
     -moz-transform: skew(15deg);
     transform: skew(15deg);
@@ -146,15 +146,15 @@ img {
 
 .callout-container {
    
-        height: 100vh;
+        height: 50vh;
     
-        background: url('https://res.cloudinary.com/dsfy0wzcj/image/upload/v1652094974/rsz_adobestock_105907729_j3nt6e.webp') no-repeat center center fixed;
+        background: url('https://res.cloudinary.com/dsfy0wzcj/image/upload/v1651966348/3717295073_f5ae257d71_o_pepjuq.jpg') no-repeat center center fixed;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
     
-        display: flex;
+        display:flex;
         align-items: center;
         justify-content: center;
     
@@ -178,4 +178,12 @@ img {
         height: 100%;
         width: 100%;
         background:rgb(164 162 160 / 30%);
+    }
+    .jumbotron-header h1 {
+        color: white;
+        font-weight: bold;
+        margin-bottom: 30px;
+        color: #fffffe;
+        font-style: italic;
+        text-align: left;
     }
