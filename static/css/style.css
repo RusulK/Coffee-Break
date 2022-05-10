@@ -1,5 +1,6 @@
 body {
     background-color: #F9FAFC;
+    background-repeat: no-repeat;
 }
 
 .brand {
@@ -9,8 +10,10 @@ body {
     color: #4A4A4F;
 }
 
-.red-o {
-    color: #E84610;
+img {
+    width: 100%;
+    height: 30vw;
+    object-fit: cover;
 }
 
 .thin {
