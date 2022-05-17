@@ -13,7 +13,7 @@ class RecipeForm(forms.ModelForm):
     class Meta:
         """Meta data for add recipe form"""
         model = Post
-        fields = ('title', 'preparing_length', 'content',
+        fields = ('title', 'content',
                   'featured_image',)
 
         
