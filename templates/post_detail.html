@@ -30,8 +30,7 @@
             <div class="card-body">
                 <!-- The post content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
-                <p class="card-text ">{{ post.ingredients | safe }}</p>
-                <p class="card-text ">{{ post.content | safe }}</p>
+               
                 <div class="row">
 
                     <div class="col-1">
@@ -56,6 +55,28 @@
                         </strong>
                         <!-- The number of likes goes before the closing strong tag -->
                         <span class="text-secondary"><i class="far fa-heart"></i> {{ post.number_of_likes }} </span>
+                    </div>
+                    <hr class="mx-auto mt-3 mb-3 text-light">
+                    <div class="col mt-2 mb-3">
+                        {% if user.id == post.author.id %}
+                        <a href="{% url 'edit_recipe' post.slug %}" class="edit"><button
+                            class="btn btn-signup btn-md black-btn" value="{{ post.slug }}"
+                            type="button">Edit</button></a>
+                        <a href="{% url 'delete_recipe' post.slug %}" class="delete"><button
+                            class="btn btn-danger btn-md mx-4" value="{{ post.slug }}" type="button">Delete</button></a>
+                        {% endif %}
+                    </div>
+                    <div class="row mt-5">
+                        <div class="col-12 text-dark">
+                            <h3 class="black-text">Ingredients</h3>
+                            {{ post.ingredients|safe }}
+                        </div>
+                    </div>
+                    <div class="row mt-5">
+                        <div class="col-12 text-dark">
+                            <h3 class="black-text">Method</h3>
+                            {{ post.content|safe }}
+                        </div>
                     </div>
                     <div class="col-1">
                         {% with comments.count as total_comments %}
@@ -96,6 +117,11 @@
             </div>
         </div>
         <div class="col-md-4 card mb-4  mt-3 ">
+            {% if commented %} 
+            <div class="alert alert-success" role="alert">
+                Your comment is being approved, please wait.
+            </div>
+            {% else %}
             <div class="card-body">
                 <!-- For later -->
                 {% if user.is_authenticated %}
@@ -109,7 +135,8 @@
                 
                 
                 </form>
-                {% endif %}
+            {% endif %}
+            {% endif %}
                 
             </div>
         </div>

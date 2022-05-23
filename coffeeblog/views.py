@@ -3,6 +3,7 @@ from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Post
 from .forms import CommentForm, RecipeForm
+from django.contrib import messages
 
 
 
@@ -95,6 +96,29 @@ def add_recipe(request):
             return render(request, "add_recipe.html", context)
     else:
         return render(request, "add_recipe.html", context)
+    
+def edit_recipe(request, slug):
+    post = get_object_or_404(Post, slug=slug)
+    recipe_form = RecipeForm(request.POST or None, instance=post)
+    context = {
+        "recipe_form": recipe_form,
+        "post": post,
+    }
+    if request.method == "POST":
+        recipe_form = RecipeForm(request.POST, instance=post)
+        if recipe_form.is_valid():
+            recipe = recipe_form.save(commit=False)
+            recipe.author = request.user
+            recipe.save()
+            return redirect('home')
+        else:
+            return render(request, "edit_recipe.html", context)
+    else:
+        return render(request, "edit_recipe.html", context)
 
-        
-        
+def delete_recipe(request, slug):
+    post = Post.objects.get(slug=slug)
+    post.delete()
+    messages.success(request, 'Post deleted!')
+    return redirect('home')
+
