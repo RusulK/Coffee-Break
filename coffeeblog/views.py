@@ -85,13 +85,13 @@ def add_recipe(request):
         'recipe_form': recipe_form,
     }
     if request.method == "POST":
-        recipe_form = RecipeForm(request.POST, request.FILES)
         if recipe_form.is_valid():
             recipe_form = recipe_form.save(commit=False)
             recipe_form.author = request.user
             recipe_form.status = 1
             recipe_form.save()
             return redirect('home')
+        else:
+            return render(request, "add_recipe.html", context)
     else:
-        recipe_form = RecipeForm()
         return render(request, "add_recipe.html", context)
