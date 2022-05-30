@@ -23,6 +23,12 @@ class Add_RecipeViews(TestCase):
 class Edit_RecipeViews(TestCase):
     """Unit Test Edit Recipe Page View"""
     def test_edit_recipe_page(self):
-        response = self.client.get(f'/edit_recipe/{post.slug}')
+        user = User.objects.create(username='User Name', email='Email', 
+                                   password='Password')
+        post = Post.objects.create(title='Test Title', author=user, 
+                                   ingredients='Test Ing', 
+                                   content='Test Content',
+                                   featured_image='Test Image')
+        response = self.client.get(f'/{post.slug}/')
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'edit_recipe.html')
+        self.assertTemplateUsed(response, 'index.html', 'base.html')
