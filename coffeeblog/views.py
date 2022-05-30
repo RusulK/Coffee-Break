@@ -112,7 +112,7 @@ def edit_recipe(request, slug):
             recipe.save()
             return redirect('home')
         else:
-            return render(request, "edit_recipe.html", context)
+            return render(request, "base.html", context)
     else:
         return render(request, "edit_recipe.html", context)
 
